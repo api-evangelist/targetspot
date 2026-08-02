@@ -1,8 +1,27 @@
 aid: targetspot
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/targetspot.png
 name: Targetspot
-description: Targetspot is a company surfaced as a portfolio company of union-square-ventures and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Targetspot is a global digital-audio advertising (AdTech) company founded in
+  2007 and headquartered in New York, connecting brands with audiences across
+  podcasts, online radio, streaming, in-video audio, mobile gaming, and
+  in-home/out-of-home audio. Its Passport product is a self-serve ad-serving
+  platform for publishers and advertisers, with granular reporting data made
+  available via a partner API, and Targetplay extends audio advertising into
+  gaming and in-app inventory. Targetspot is now part of the Azerion platform.
+  This profile originated as a Union Square Ventures portfolio lead and has been
+  enriched from public web probes.
 url: https://raw.githubusercontent.com/api-evangelist/targetspot/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,9 +31,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Advertising
+- AdTech
+- Digital Audio
+- Ad Serving
+- Podcast Advertising
+- Publishers
+- Advertisers
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,3 +50,24 @@ maintainers:
 common:
 - type: Website
   url: https://targetspot.com
+- type: Portal
+  url: https://passport.targetspot.com/
+- type: Login
+  url: https://passport.targetspot.com/
+- type: Blog
+  url: https://www.targetspot.com/blog/
+- type: Support
+  url: https://www.targetspot.com/contact/
+- type: PrivacyPolicy
+  url: https://www.targetspot.com/privacy-policy/
+- type: Products
+  url: https://www.targetspot.com/products/
+- type: DomainSecurity
+  url: security/targetspot-domain-security.yml
+- type: WellKnown
+  url: well-known/targetspot-well-known.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1

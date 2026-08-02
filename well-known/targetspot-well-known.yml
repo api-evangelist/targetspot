@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: probed
+source: live HTTP probes of https://targetspot.com/.well-known/*
+host: targetspot.com
+notes: >-
+  No .well-known discovery documents are published. security.txt returns 404;
+  the OIDC/OAuth/api-catalog/ai-plugin paths 301-redirect apex to the www host,
+  where they also do not resolve to a document (404). No 200 responses, so no
+  raw well-known files were saved.
+endpoints:
+- path: /.well-known/security.txt
+  status: 404
+  file: null
+- path: /.well-known/openid-configuration
+  status: 301
+  redirect: https://www.targetspot.com/.well-known/openid-configuration
+  file: null
+- path: /.well-known/oauth-authorization-server
+  status: 301
+  file: null
+- path: /.well-known/api-catalog
+  status: 301
+  redirect: https://www.targetspot.com/.well-known/api-catalog
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 301
+  file: null
