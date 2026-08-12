@@ -1,0 +1,43 @@
+# Targetspot
+
+> Targetspot is a global digital-audio advertising (AdTech) company founded in 2007 and headquartered in New York, now part of the Azerion platform. It connects brands with audiences across podcasts, online radio, streaming, in-video audio, mobile gaming and in-home/out-of-home audio. Its Passport product is a self-serve ad-serving and analytics platform for publishers and advertisers; Targetplay extends audio advertising into gaming and in-app inventory.
+
+## API status
+
+> Targetspot markets an API but publishes no developer surface. As of 2026-08-12 there is no developer portal, no API reference, no OpenAPI/AsyncAPI/GraphQL specification, no SDK in any public package registry, and no /.well-known/ discovery document on any Targetspot host. The Passport reporting API is referenced only as a product bullet — "Granular reporting: data visualization according to your inventory structure, available via API in your own tool" — and Targetspot On Demand (TOD), an on-demand ad-response API returning JSON ad objects, is documented only to partners. Access to both runs through the Passport tenant and the contact-sales form. The host api.targetspot.com resolves in DNS but refuses TCP connections on 80 and 443.
+
+## Products
+
+- [Passport](https://www.targetspot.com/passport/): Ad-serving and analytics platform for digital-audio publishers and advertisers; the surface behind which the reporting API sits.
+- [Products overview](https://www.targetspot.com/products/): Adserver, Passport Audio Manager (PAM), Targetplay, streaming technology.
+- [Targetplay](https://www.targetspot.com/products/targetplay/): Audio advertising in mobile gaming and in-app inventory.
+- [Publishers](https://www.targetspot.com/publishers/): Monetization offering for digital-audio publishers.
+- [Advertisers](https://www.targetspot.com/advertisers/): Campaign and audience offering for brands and agencies.
+- [Audience segmentation](https://www.targetspot.com/advertisers/audience-segmentation/): Targeting taxonomy for digital-audio campaigns.
+
+## Integration specifications
+
+- [Technical specifications](https://www.targetspot.com/technical-specifications/): Creative and trafficking requirements — MP3/WAV audio creative, 5-60s durations, CBR 256/320kbps, -24 LKFS (ATSC A/85) in North America and -23 LUFS (EBU R128) in Europe, 44.1kHz; secure 1x1 impression trackers only; VAST 3.0 accepted when used directly in the Targetspot adserver (VAST/VPAID behind a DSP is not supported due to audio pre-fetch behaviour in players); companion banners 300x250 / 300x300 / 640x640 JPG, max 200kB.
+
+## Access
+
+- [Passport login](https://passport.targetspot.com/): Tenant login for the ad-serving platform. Client-side application; no public routes.
+- [Contact](https://www.targetspot.com/contact-us/): The only route to API or platform access.
+
+## Company
+
+- [Website](https://www.targetspot.com)
+- [Blog](https://www.targetspot.com/blog/)
+- [Blog RSS](https://www.targetspot.com/feed/)
+- [Case studies](https://www.targetspot.com/case-studies/)
+- [Privacy policy](https://www.targetspot.com/privacy-policy/)
+- [GitHub organization](https://github.com/targetspot): First-party, 0 public repositories.
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/targetspot/refs/heads/main/apis.yml)
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/targetspot/refs/heads/main/well-known/targetspot-well-known.yml): Verified absence across apex, www and passport hosts.
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/targetspot/refs/heads/main/security/targetspot-domain-security.yml)
+- [Packages](https://raw.githubusercontent.com/api-evangelist/targetspot/refs/heads/main/packages/targetspot-packages.yml)
+- [Plans and pricing](https://raw.githubusercontent.com/api-evangelist/targetspot/refs/heads/main/plans/targetspot-plans-pricing.yml)
+- [Rate limits](https://raw.githubusercontent.com/api-evangelist/targetspot/refs/heads/main/rate-limits/targetspot-rate-limits.yml)

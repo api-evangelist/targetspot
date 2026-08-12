@@ -1,0 +1,48 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  registry.npmjs.org, pypi.org, rubygems.org, crates.io, repo.packagist.org,
+  api.github.com/orgs/targetspot
+package_count: 0
+packages: []
+note: >-
+  Targetspot publishes no client libraries in any public package registry. A
+  first-party GitHub organization exists and is verifiably theirs
+  (https://github.com/targetspot — name "Targetspot", website http://www.targetspot.com,
+  location New York, NY, created 2014-01-07) but it has 0 public repositories, so
+  there is no source-distributed SDK either. No `SDKs` pointer is wired, because
+  no official client library was found; the `GitHubOrganization` pointer reflects
+  the verified-but-empty org.
+registries_probed:
+- registry: npm
+  query: targetspot
+  url: https://registry.npmjs.org/-/v1/search?text=targetspot
+  status: 200
+  results: 0
+- registry: pypi
+  name: targetspot
+  url: https://pypi.org/pypi/targetspot/json
+  status: 404
+- registry: rubygems
+  name: targetspot
+  url: https://rubygems.org/api/v1/gems/targetspot.json
+  status: 404
+- registry: crates.io
+  name: targetspot
+  url: https://crates.io/api/v1/crates/targetspot
+  status: 403
+  note: crates.io rejects unbranded agents; no crate named targetspot is known to exist
+- registry: packagist
+  name: targetspot/targetspot
+  url: https://repo.packagist.org/p2/targetspot/targetspot.json
+  status: 404
+- registry: github
+  name: targetspot
+  url: https://api.github.com/orgs/targetspot
+  status: 200
+  public_repos: 0
+  version: null
+  published: null
+  note: >-
+    Organization exists and is first-party, but ships nothing publicly, so there is
+    no version or release date to record.

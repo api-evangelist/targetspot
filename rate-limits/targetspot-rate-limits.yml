@@ -1,0 +1,26 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.targetspot.com/
+limit_count: 0
+limits: []
+headers: []
+exhaustion_status: null
+note: >-
+  No rate limits are documented anywhere on Targetspot's public surface, because
+  no API reference is published at all. The Passport reporting API is referenced
+  once, as a marketing bullet on https://www.targetspot.com/passport/ ("Granular
+  reporting: data visualization according to your inventory structure, available
+  via API in your own tool"), with no endpoint, no reference page, no throttling
+  policy and no response-header contract. api.targetspot.com resolves in DNS
+  (31.12.71.102) but refuses TCP on both 80 and 443, so no live response could be
+  observed to read RateLimit-* headers from either. Honest zero.
+  NO `RateLimits` pointer is wired into apis.yml for this file — the artifact
+  records an absence, and a pointer would assert a published rate-limit contract
+  that Targetspot does not have.
+evidence:
+- url: https://www.targetspot.com/passport/
+  status: 200
+  note: sole API mention; no limits, endpoints or headers documented
+- url: https://api.targetspot.com/
+  status: 0
+  note: DNS resolves to 31.12.71.102; TCP connect to 443 and 80 both time out

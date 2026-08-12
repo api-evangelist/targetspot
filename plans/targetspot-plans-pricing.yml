@@ -1,0 +1,23 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.targetspot.com/
+plan_count: 0
+currency: null
+plans: []
+note: >-
+  Targetspot publishes no pricing or plans page of any kind. The site is a
+  108-URL WordPress marketing site (full sitemap walked) with no /pricing,
+  /plans, /rate-card or self-serve sign-up route; https://www.targetspot.com/pricing/
+  returns 404. Every commercial path terminates at the "Contact us" form, and
+  the Passport ad-server platform is sold through Targetspot's advertising-sales
+  and publisher-partnership teams rather than as a published-price product.
+  This is an enterprise contact-sales motion, recorded as an honest zero.
+evidence:
+- url: https://www.targetspot.com/pricing/
+  status: 404
+- url: https://www.targetspot.com/sitemap.xml
+  status: 200
+  note: 108 URLs, none of which is a pricing or plans page
+- url: https://www.targetspot.com/contact-us/
+  status: 200
+  note: the only commercial call-to-action on the site

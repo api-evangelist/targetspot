@@ -1,27 +1,87 @@
-generated: '2026-07-21'
+generated: '2026-08-12'
 method: probed
-source: live HTTP probes of https://targetspot.com/.well-known/*
-host: targetspot.com
+source: live HTTP probes of the targetspot.com apex, www and passport hosts
+host: https://www.targetspot.com
+hosts_probed:
+- targetspot.com
+- www.targetspot.com
+- passport.targetspot.com
 notes: >-
-  No .well-known discovery documents are published. security.txt returns 404;
-  the OIDC/OAuth/api-catalog/ai-plugin paths 301-redirect apex to the www host,
-  where they also do not resolve to a document (404). No 200 responses, so no
-  raw well-known files were saved.
+  No .well-known discovery documents are published on any Targetspot host. The
+  apex 301-redirects every /.well-known/* path to the www host, where all of them
+  return 404. The passport.targetspot.com application host answers HTTP 200 for
+  EVERY path — including paths that cannot exist — with the same client-side
+  single-page-app HTML shell, so its 200s are catch-all responses and NOT served
+  documents; they are recorded here as misses. Because no path returned a real
+  document, NO WellKnown or SecurityTxt pointer is wired in apis.yml: this file
+  records a verified absence, not a published surface.
+documents: []
 endpoints:
-- path: /.well-known/security.txt
+- host: www.targetspot.com
+  path: /.well-known/security.txt
   status: 404
   file: null
-- path: /.well-known/openid-configuration
+- host: www.targetspot.com
+  path: /.well-known/openid-configuration
+  status: 404
+  file: null
+- host: www.targetspot.com
+  path: /.well-known/oauth-authorization-server
+  status: 404
+  file: null
+- host: www.targetspot.com
+  path: /.well-known/api-catalog
+  status: 404
+  file: null
+- host: www.targetspot.com
+  path: /.well-known/ai-plugin.json
+  status: 404
+  file: null
+- host: www.targetspot.com
+  path: /.well-known/agent-card.json
+  status: 404
+  file: null
+- host: www.targetspot.com
+  path: /.well-known/agent.json
+  status: 404
+  file: null
+- host: www.targetspot.com
+  path: /llms.txt
+  status: 404
+  file: null
+- host: targetspot.com
+  path: /.well-known/security.txt
+  status: 404
+  file: null
+- host: targetspot.com
+  path: /.well-known/openid-configuration
   status: 301
   redirect: https://www.targetspot.com/.well-known/openid-configuration
   file: null
-- path: /.well-known/oauth-authorization-server
+- host: targetspot.com
+  path: /.well-known/oauth-authorization-server
   status: 301
   file: null
-- path: /.well-known/api-catalog
+- host: targetspot.com
+  path: /.well-known/api-catalog
   status: 301
   redirect: https://www.targetspot.com/.well-known/api-catalog
   file: null
-- path: /.well-known/ai-plugin.json
+- host: targetspot.com
+  path: /.well-known/ai-plugin.json
   status: 301
   file: null
+- host: passport.targetspot.com
+  path: /.well-known/agent-card.json
+  status: 200
+  file: null
+  verdict: spa-catch-all
+  note: >-
+    Body is the Passport single-page-app HTML shell (<!DOCTYPE html>), identical to
+    the body returned for /nonexistent-abc123. Not a document; treated as a miss.
+- host: passport.targetspot.com
+  path: /.well-known/agent.json
+  status: 200
+  file: null
+  verdict: spa-catch-all
+  note: Same SPA HTML shell as every other path on this host. Treated as a miss.

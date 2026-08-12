@@ -31,7 +31,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-08-12'
 tags:
 - Company
 - Advertising
@@ -57,17 +57,44 @@ common:
 - type: Blog
   url: https://www.targetspot.com/blog/
 - type: Support
-  url: https://www.targetspot.com/contact/
+  url: https://www.targetspot.com/contact-us/
 - type: PrivacyPolicy
   url: https://www.targetspot.com/privacy-policy/
 - type: Products
   url: https://www.targetspot.com/products/
+- type: BlogRSS
+  url: https://www.targetspot.com/feed/
+- type: GitHubOrganization
+  url: https://github.com/targetspot
 - type: DomainSecurity
   url: security/targetspot-domain-security.yml
-- type: WellKnown
-  url: well-known/targetspot-well-known.yml
+- type: Packages
+  url: packages/targetspot-packages.yml
+- type: Plans
+  url: plans/targetspot-plans-pricing.yml
+- type: LLMsTxt
+  url: llms/targetspot-llms.txt
 x-enrichment:
-  date: '2026-07-21'
+  date: '2026-08-12'
   status: minimal
-  artifacts_added: 1
+  artifacts_added: 4
   pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    Targetspot markets a Passport reporting API on its product page but publishes
+    no reference for it anywhere — the only route to the contract is a tenant login
+    at passport.targetspot.com, whose server answers 200 with the same JavaScript
+    app shell for every path including ones that cannot exist, while the API host
+    api.targetspot.com resolves in DNS and then refuses TCP on 80 and 443.
+  evidence:
+  - url: https://www.targetspot.com/passport/
+    status: 200
+  - url: https://passport.targetspot.com/openapi.json
+    status: 200
+  - url: https://www.targetspot.com/.well-known/api-catalog
+    status: 404
+  - url: https://api.targetspot.com/
+    status: 0
+  checked: '2026-08-12'
