@@ -59,6 +59,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: RateLimits
+  url: rate-limits/targetspot-rate-limits.yml
 - type: Website
   url: https://targetspot.com
 - type: Portal
